@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Henry Chan",
-  description: "Personal website of Henry Chan.",
+  title: {
+    default: "Henry Chan",
+    template: "%s · Henry Chan",
+  },
+  description: "Portfolio of Henry Chan: work experience and projects.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -23,7 +28,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-16">
+          {children}
+        </div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
