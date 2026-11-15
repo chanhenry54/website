@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { Banner } from "@/components/banner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteHeader />
+        {/* Remove once the placeholder content in content/ is filled in. */}
+        <Banner variant="warning" title="Work in progress." pulse>
+          This site is still being built, so some pages have placeholder content.
+        </Banner>        <SiteHeader />
         <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-16">
           {children}
         </div>
