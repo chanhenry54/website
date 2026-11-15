@@ -1,13 +1,52 @@
 @import "tailwindcss";
 
+/*
+ * Color tokens. Each status (info, warning, alert) has four roles:
+ *   --{status}             surface background
+ *   --{status}-foreground  text on that surface
+ *   --{status}-border      hairline border
+ *   --{status}-accent      solid indicator (dot, icon)
+ * They are exposed to Tailwind below, e.g. bg-warning, text-alert-foreground.
+ */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --info: #eff6ff;
+  --info-foreground: #1e3a8a;
+  --info-border: #bfdbfe;
+  --info-accent: #3b82f6;
+
+  --warning: #fffbeb;
+  --warning-foreground: #78350f;
+  --warning-border: #fde68a;
+  --warning-accent: #f59e0b;
+
+  --alert: #fef2f2;
+  --alert-foreground: #7f1d1d;
+  --alert-border: #fecaca;
+  --alert-accent: #ef4444;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-border: var(--info-border);
+  --color-info-accent: var(--info-accent);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-border: var(--warning-border);
+  --color-warning-accent: var(--warning-accent);
+
+  --color-alert: var(--alert);
+  --color-alert-foreground: var(--alert-foreground);
+  --color-alert-border: var(--alert-border);
+  --color-alert-accent: var(--alert-accent);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +55,21 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --info: #0b1a33;
+    --info-foreground: #93c5fd;
+    --info-border: #1e3a5f;
+    --info-accent: #3b82f6;
+
+    --warning: #2a1d05;
+    --warning-foreground: #fcd34d;
+    --warning-border: #4a3510;
+    --warning-accent: #f59e0b;
+
+    --alert: #2a0b0b;
+    --alert-foreground: #fca5a5;
+    --alert-border: #4c1414;
+    --alert-accent: #ef4444;
   }
 }
 
